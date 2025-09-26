@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paltas Beauty — K-Beauty en Perú</title>
+
+  <!-- Fonts + Tailwind -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Plus Jakarta Sans", "system-ui", "sans-serif"] },
+          colors: {
+            primary: "#5F8843",     /* verde palta oscuro (principal) */
+            oliva:   "#7D8451",     /* verde oliva */
+            rosa:    "#F5B7C4",     /* rosa suave */
+            coral:   "#FA9F66",     /* coral */
+            lima:    "#D7FBA4",     /* verde lima pastel */
+            base:    "#0B0F0A",
+            paper:   "#F7F7F6"
+          },
+          boxShadow: {
+            card: "0 8px 24px rgba(0,0,0,.06)",
+            soft: "0 8px 40px rgba(95,136,67,.12)"
+          },
+          borderRadius: { xl: "1rem" }
+        }
+      }
+    }
+  </script>
+  <style>
+    .container { max-width: 1200px }
+    .brand-dot { width: 6px; height: 6px; border-radius: 9999px; background: #FA9F66 }
+    .badge { font-weight:700; font-size:.75rem; padding:.25rem .5rem; border-radius:9999px; background:#F5B7C4; color:#5F1133 }
+  </style>
+</head>
+<body class="bg-paper text-base text-base/relaxed text-stone-800">
+
+  <!-- Top announcement -->
+  <div class="w-full bg-oliva text-white text-sm">
+    <div class="container mx-auto px-4 py-2 flex items-center justify-center gap-3">
+      <span>★ Envíos a todo el Perú — Gratis desde S/ 250</span>
+      <span class="brand-dot"></span>
+      <span>Regístrate y obtén 10% OFF en tu primera compra</span>
+    </div>
+  </div>
+
+  <!-- Header / Navbar -->
+  <header class="sticky top-0 z-40 bg-white/85 backdrop-blur border-b border-stone-200">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <svg class="text-primary" width="28" height="28" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.1614 31.6043 14.31 30.3636C8.1614 29.123 4 26.7382 4 24C4 21.2618 8.1614 18.877 14.31 17.6364C8.1614 16.3957 4 14.0109 4 11.2727C4 7.2561 12.9543 4 24 4C35.0457 4 44 7.2561 44 11.2727Z"/></svg>
+        <span class="text-xl font-extrabold tracking-tight">Paltas Beauty</span>
+      </div>
+
+      <nav class="hidden lg:flex items-center gap-7 text-[15px] font-semibold">
+        <a class="hover:text-primary" href="#">Skincare</a>
+        <a class="hover:text-primary" href="#">Maquillaje</a>
+        <a class="hover:text-primary" href="#">Corporal</a>
+        <a class="hover:text-primary" href="#">Accesorios</a>
+        <a class="hover:text-primary" href="#">Marcas</a>
+        <a class="text-coral hover:opacity-90" href="#">Sale</a>
+        <a class="hover:text-primary" href="#">Sets</a>
+        <a class="hover:text-primary" href="#">Preventa</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <button class="h-10 w-10 rounded-full bg-lima/40 text-oliva hover:bg-lima/70 grid place-items-center" aria-label="Buscar">
+          <svg width="18" height="18" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"/></svg>
+        </button>
+        <button class="h-10 w-10 rounded-full bg-lima/40 text-oliva hover:bg-lima/70 grid place-items-center" aria-label="Cuenta">
+          <svg width="18" height="18" viewBox="0 0 256 256" fill="currentColor"><path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"/></svg>
+        </button>
+        <button class="h-10 w-10 rounded-full bg-lima/40 text-oliva hover:bg-lima/70 grid place-items-center" aria-label="Carrito">
+          <svg width="18" height="18" viewBox="0 0 256 256" fill="currentColor"><path d="M216,40H48a8,8,0,0,0-7.8,6.1l-24,112A8,8,0,0,0,24,168H200a8,8,0,0,0,7.8-6.1l24-112A8,8,0,0,0,216,40ZM193.5,152H36.5L57.6,56H214.4ZM96,200a16,16,0,1,1-16-16A16,16,0,0,1,96,200Zm120,0a16,16,0,1,1-16-16A16,16,0,0,1,216,200Z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO / Carousel -->
+    <section class="relative overflow-hidden">
+      <div id="hero" class="container mx-auto px-4">
+        <div class="relative rounded-2xl overflow-hidden shadow-soft">
+          <div class="hero-slide relative h-[440px] md:h-[520px] bg-center bg-cover"
+               style="background-image:
+               linear-gradient(180deg, rgba(11,15,10,.15), rgba(11,15,10,.55)),
+               url('https://images.unsplash.com/photo-1562887000-3b9a0a5c2f63?q=80&w=1800&auto=format&fit=crop');">
+            <div class="absolute inset-0 p-8 md:p-12 flex flex-col justify-end text-white">
+              <h2 class="max-w-2xl text-4xl md:text-5xl font-extrabold leading-tight">Tu <span class="text-lima">BEAUTY</span> secret ✨</h2>
+              <p class="mt-2 text-white/90">1 producto -15% | 2 productos -20% • válido hasta el 15 de Setiembre</p>
+              <div class="mt-5">
+                <a href="#" class="inline-flex items-center gap-2 rounded-full bg-rosa px-6 py-3 font-bold text-base text-base shadow-soft hover:opacity-95">
+                  SHOP NOW
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- dots -->
+          <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+            <button class="h-2 w-2 rounded-full bg-white/80"></button>
+            <button class="h-2 w-2 rounded-full bg-white/40"></button>
+            <button class="h-2 w-2 rounded-full bg-white/40"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Productos nuevos -->
+    <section class="container mx-auto px-4 py-14">
+      <h3 class="text-center text-3xl font-extrabold text-primary">Productos Nuevos</h3>
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Card -->
+        <article class="rounded-xl bg-white shadow-card p-4 transition hover:-translate-y-0.5">
+          <div class="relative overflow-hidden rounded-lg">
+            <span class="badge absolute left-3 top-3">Nuevo</span>
+            <img class="w-full aspect-[4/3] object-cover transition duration-300 hover:scale-105"
+                 src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=1200&auto=format&fit=crop"
+                 alt="Serum" />
+          </div>
+          <div class="mt-4 space-y-1">
+            <p class="text-xs uppercase tracking-wide text-stone-500">COLORGRAM</p>
+            <h4 class="font-semibold">Blur Nude Tint</h4>
+            <p class="text-primary font-extrabold text-lg">S/. 65.00</p>
+            <button class="w-full mt-2 rounded-full border-2 border-rosa text-oliva py-2 font-bold hover:bg-rosa/10">Elige tus opciones</button>
+          </div>
+        </article>
+
+        <article class="rounded-xl bg-white shadow-card p-4 transition hover:-translate-y-0.5">
+          <div class="relative overflow-hidden rounded-lg">
+            <span class="badge absolute left-3 top-3">Nuevo</span>
+            <img class="w-full aspect-[4/3] object-cover transition duration-300 hover:scale-105"
+                 src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?q=80&w=1200&auto=format&fit=crop"
+                 alt="Gua Sha" />
+          </div>
+          <div class="mt-4 space-y-1">
+            <p class="text-xs uppercase tracking-wide text-stone-500">Sonboda</p>
+            <h4 class="font-semibold">31 Ceramic Gua Sha</h4>
+            <p class="text-primary font-extrabold text-lg">S/. 95.00</p>
+            <button class="w-full mt-2 rounded-full border-2 border-rosa text-oliva py-2 font-bold hover:bg-rosa/10">Añadir al carrito</button>
+          </div>
+        </article>
+
+        <article class="rounded-xl bg-white shadow-card p-4 transition hover:-translate-y-0.5">
+          <div class="relative overflow-hidden rounded-lg">
+            <span class="badge absolute left-3 top-3">Nuevo</span>
+            <img class="w-full aspect-[4/3] object-cover transition duration-300 hover:scale-105"
+                 src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?q=80&w=1200&auto=format&fit=crop"
+                 alt="Brocha" />
+          </div>
+          <div class="mt-4 space-y-1">
+            <p class="text-xs uppercase tracking-wide text-stone-500">Sonboda</p>
+            <h4 class="font-semibold">24 Eye Shadow (Under Point) Brush</h4>
+            <p class="text-primary font-extrabold text-lg">S/. 25.00</p>
+            <button class="w-full mt-2 rounded-full border-2 border-rosa text-oliva py-2 font-bold hover:bg-rosa/10">Añadir al carrito</button>
+          </div>
+        </article>
+
+        <article class="rounded-xl bg-white shadow-card p-4 transition hover:-translate-y-0.5">
+          <div class="relative overflow-hidden rounded-lg">
+            <span class="badge absolute left-3 top-3">Nuevo</span>
+            <img class="w-full aspect-[4/3] object-cover transition duration-300 hover:scale-105"
+                 src="https://images.unsplash.com/photo-1629126066123-7f6afccf1e77?q=80&w=1200&auto=format&fit=crop"
+                 alt="Foundation Brush" />
+          </div>
+          <div class="mt-4 space-y-1">
+            <p class="text-xs uppercase tracking-wide text-stone-500">Sonboda</p>
+            <h4 class="font-semibold">16 Square Foundation Brush</h4>
+            <p class="text-primary font-extrabold text-lg">S/. 40.00</p>
+            <button class="w-full mt-2 rounded-full border-2 border-rosa text-oliva py-2 font-bold hover:bg-rosa/10">Añadir al carrito</button>
+          </div>
+        </article>
+      </div>
+    </section>
+<!-- SALE + PRODUCT CARDS (Paltas Beauty palette) -->
+<section class="container mx-auto px-4 py-10">
+  <div class="grid gap-8 md:grid-cols-3 items-start">
+    <!-- SALE banner (2 cols) -->
+    <article class="md:col-span-2 relative overflow-hidden rounded-2xl shadow-[0_12px_40px_rgba(95,136,67,.18)]">
+      <!-- fondo degradado en verdes (marca) -->
+      <div class="h-[360px] md:h-[420px] bg-gradient-to-br from-[#7D8451] via-[#5F8843] to-[#7D8451]"></div>
+
+      <!-- sparkles simples -->
+      <svg class="absolute left-6 top-8 opacity-70" width="80" height="80" viewBox="0 0 100 100" fill="none">
+        <path d="M50 0c5 20 30 45 50 50-20 5-45 30-50 50-5-20-30-45-50-50 20-5 45-30 50-50Z" fill="#D7FBA4"/>
+      </svg>
+      <svg class="absolute right-8 bottom-10 opacity-60" width="80" height="80" viewBox="0 0 100 100" fill="none">
+        <path d="M50 0c5 20 30 45 50 50-20 5-45 30-50 50-5-20-30-45-50-50 20-5 45-30 50-50Z" fill="#F5B7C4"/>
+      </svg>
+
+      <!-- contenido -->
+      <div class="absolute inset-0 p-8 md:p-12 flex flex-col items-start justify-center text-white">
+        <p class="text-white/90 font-semibold tracking-wide">¡Descuentos exclusivos!</p>
+        <h2 class="mt-2 text-6xl md:text-7xl font-extrabold leading-none">SALE</h2>
+        <p class="mt-3 text-white/90">Aprovecha -20% en productos seleccionados</p>
+        <a href="#"
+           class="mt-6 inline-flex items-center rounded-full bg-white px-6 py-3 font-extrabold text-[#5F8843] hover:bg-[#D7FBA4] transition">
+          SHOP NOW
+        </a>
+      </div>
+    </article>
+
+    <!-- Columna de productos (2 cards) -->
+    <div class="flex flex-col gap-6">
+      <!-- Card 1 -->
+      <article class="rounded-2xl bg-white shadow-[0_8px_28px_rgba(0,0,0,.08)] p-4">
+        <div class="relative overflow-hidden rounded-xl">
+          <span class="absolute left-3 top-3 rounded-full bg-[#F5B7C4] px-3 py-1 text-xs font-bold text-[#5F1133]">Sale</span>
+          <span class="absolute left-3 top-10 rounded-md bg-[#FA9F66] px-2 py-1 text-[11px] font-extrabold text-white">-20%</span>
+          <img
+            class="w-full aspect-[4/3] object-cover"
+            src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?q=80&w=1200&auto=format&fit=crop"
+            alt="Dúo Perfect Skin" />
+        </div>
+        <div class="mt-4 space-y-1">
+          <p class="text-[12px] uppercase tracking-wide text-stone-500">Heimish</p>
+          <h3 class="font-semibold">Dúo Perfect Skin</h3>
+          <div class="mt-1 flex items-baseline gap-2">
+            <span class="text-[#5F8843] font-extrabold text-lg">S/. 112.00</span>
+            <span class="text-stone-400 line-through">S/. 140.00</span>
+          </div>
+          <button
+            class="mt-3 w-full rounded-full border-2 border-[#F5B7C4] py-2.5 font-bold text-[#7D8451] hover:bg-[#F5B7C4]/10">
+            Añadir al carrito
+          </button>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="rounded-2xl bg-white shadow-[0_8px_28px_rgba(0,0,0,.08)] p-4">
+        <div class="relative overflow-hidden rounded-xl">
+          <span class="absolute left-3 top-3 rounded-full bg-[#F5B7C4] px-3 py-1 text-xs font-bold text-[#5F1133]">Sale</span>
+          <span class="absolute left-3 top-10 rounded-md bg-[#FA9F66] px-2 py-1 text-[11px] font-extrabold text-white">-20%</span>
+          <img
+            class="w-full aspect-[4/3] object-cover"
+            src="https://images.unsplash.com/photo-1603657531268-5f3d1b4e7c2b?q=80&w=1200&auto=format&fit=crop"
+            alt="Dúo Green Tea" />
+        </div>
+        <div class="mt-4 space-y-1">
+          <p class="text-[12px] uppercase tracking-wide text-stone-500">Isntree</p>
+          <h3 class="font-semibold">Dúo Green Tea</h3>
+          <div class="mt-1 flex items-baseline gap-2">
+            <span class="text-[#5F8843] font-extrabold text-lg">S/. 112.00</span>
+            <span class="text-stone-400 line-through">S/. 140.00</span>
+          </div>
+          <button
+            class="mt-3 w-full rounded-full border-2 border-[#F5B7C4] py-2.5 font-bold text-[#7D8451] hover:bg-[#F5B7C4]/10">
+            Añadir al carrito
+          </button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+ <section class="container mx-auto px-4 py-14">
+      <h3 class="text-center text-3xl font-extrabold text-primary">Todos nuestros Productos</h3>
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Card -->
+        <article class="rounded-xl bg-white shadow-card p-4 transition hover:-translate-y-0.5">
+          <div class="relative overflow-hidden rounded-lg">
+            <span class="badge absolute left-3 top-3">Nuevo</span>
+            <img class="w-full aspect-[4/3] object-cover transition duration-300 hover:scale-105"
+                 src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=1200&auto=format&fit=crop"
+                 alt="Serum" />
+          </div>
+          <div class="mt-4 space-y-1">
+            <p class="text-xs uppercase tracking-wide text-stone-500">COLORGRAM</p>
+            <h4 class="font-semibold">Blur Nude Tint</h4>
+            <p class="text-primary font-extrabold text-lg">S/. 65.00</p>
+            <button class="w-full mt-2 rounded-full border-2 border-rosa text-oliva py-2 font-bold hover:bg-rosa/10">Elige tus opciones</button>
+          </div>
+        </article>
+
+        <article class="rounded-xl bg-white shadow-card p-4 transition hover:-translate-y-0.5">
+          <div class="relative overflow-hidden rounded-lg">
+            <span class="badge absolute left-3 top-3">Nuevo</span>
+            <img class="w-full aspect-[4/3] object-cover transition duration-300 hover:scale-105"
+                 src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?q=80&w=1200&auto=format&fit=crop"
+                 alt="Gua Sha" />
+          </div>
+          <div class="mt-4 space-y-1">
+            <p class="text-xs uppercase tracking-wide text-stone-500">Sonboda</p>
+            <h4 class="font-semibold">31 Ceramic Gua Sha</h4>
+            <p class="text-primary font-extrabold text-lg">S/. 95.00</p>
+            <button class="w-full mt-2 rounded-full border-2 border-rosa text-oliva py-2 font-bold hover:bg-rosa/10">Añadir al carrito</button>
+          </div>
+        </article>
+
+        <article class="rounded-xl bg-white shadow-card p-4 transition hover:-translate-y-0.5">
+          <div class="relative overflow-hidden rounded-lg">
+            <span class="badge absolute left-3 top-3">Nuevo</span>
+            <img class="w-full aspect-[4/3] object-cover transition duration-300 hover:scale-105"
+                 src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?q=80&w=1200&auto=format&fit=crop"
+                 alt="Brocha" />
+          </div>
+          <div class="mt-4 space-y-1">
+            <p class="text-xs uppercase tracking-wide text-stone-500">Sonboda</p>
+            <h4 class="font-semibold">24 Eye Shadow (Under Point) Brush</h4>
+            <p class="text-primary font-extrabold text-lg">S/. 25.00</p>
+            <button class="w-full mt-2 rounded-full border-2 border-rosa text-oliva py-2 font-bold hover:bg-rosa/10">Añadir al carrito</button>
+          </div>
+        </article>
+
+        <article class="rounded-xl bg-white shadow-card p-4 transition hover:-translate-y-0.5">
+          <div class="relative overflow-hidden rounded-lg">
+            <span class="badge absolute left-3 top-3">Nuevo</span>
+            <img class="w-full aspect-[4/3] object-cover transition duration-300 hover:scale-105"
+                 src="https://images.unsplash.com/photo-1629126066123-7f6afccf1e77?q=80&w=1200&auto=format&fit=crop"
+                 alt="Foundation Brush" />
+          </div>
+          <div class="mt-4 space-y-1">
+            <p class="text-xs uppercase tracking-wide text-stone-500">Sonboda</p>
+            <h4 class="font-semibold">16 Square Foundation Brush</h4>
+            <p class="text-primary font-extrabold text-lg">S/. 40.00</p>
+            <button class="w-full mt-2 rounded-full border-2 border-rosa text-oliva py-2 font-bold hover:bg-rosa/10">Añadir al carrito</button>
+          </div>
+        </article>
+      </div>
+    </section>
+    <!-- Social + Promos (carrusel simple en grid) -->
+    <section class="container mx-auto px-4 pb-4">
+      <div class="flex items-end justify-between">
+        <h3 class="text-2xl font-extrabold">Síguenos en <span class="text-oliva">@paltasbeauty</span></h3>
+        <p class="text-sm text-stone-500 hidden md:block">TikTok • Instagram</p>
+      </div>
+
+      <div class="mt-6 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        <img class="rounded-xl shadow-card aspect-[9/16] object-cover" src="https://images.unsplash.com/photo-1603532648955-b32aee0f1253?q=80&w=900&auto=format&fit=crop" alt="">
+        <img class="rounded-xl shadow-card aspect-[9/16] object-cover" src="https://images.unsplash.com/photo-1612700438985-691f56a34a4e?q=80&w=900&auto=format&fit=crop" alt="">
+        <img class="rounded-xl shadow-card aspect-[9/16] object-cover" src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=900&auto=format&fit=crop" alt="">
+        <div class="rounded-xl shadow-card aspect-[9/16] bg-gradient-to-b from-rosa to-white grid place-items-center text-center p-6">
+          <p class="text-xl font-extrabold">¿Ya conoces los <span class="text-coral">KITS</span> que lo tienen todo?</p>
+        </div>
+        <div class="rounded-xl shadow-card aspect-[9/16] bg-white overflow-hidden">
+          <div class="h-full w-full bg-[url('https://images.unsplash.com/photo-1616046229478-9901c5536a45?q=80&w=1200&auto=format&fit=crop')] bg-cover bg-center"></div>
+        </div>
+        <div class="rounded-xl shadow-card aspect-[9/16] bg-[url('https://images.unsplash.com/photo-1611930022367-c2e806b13cfe?q=80&w=1200&auto=format&fit=crop')] bg-cover bg-center"></div>
+      </div>
+    </section>
+      <!-- Productos nuevos -->
+   
+
+    <!-- Trust badges -->
+    <section class="container mx-auto px-4 py-12">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="rounded-xl bg-white p-6 shadow-card">
+          <p class="font-extrabold">Envíos a todo el Perú</p>
+          <p class="text-sm text-stone-500 mt-1">Gratis desde S/ 250</p>
+        </div>
+        <div class="rounded-xl bg-white p-6 shadow-card">
+          <p class="font-extrabold">Compras seguras</p>
+          <p class="text-sm text-stone-500 mt-1">Checkout simple y protegido</p>
+        </div>
+        <div class="rounded-xl bg-white p-6 shadow-card">
+          <p class="font-extrabold">Productos 100% originales</p>
+          <p class="text-sm text-stone-500 mt-1">Marcas K-Beauty seleccionadas</p>
+        </div>
+        <div class="rounded-xl bg-white p-6 shadow-card">
+          <p class="font-extrabold">¿Necesitas ayuda?</p>
+          <p class="text-sm text-stone-500 mt-1">WhatsApp y soporte humano</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quiénes somos -->
+    <section class="bg-lima/35">
+      <div class="container mx-auto px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
+        <img class="rounded-2xl shadow-soft object-cover w-full h-[420px]"
+             src="https://images.unsplash.com/photo-1598397954615-9a0e7c0e0d3a?q=80&w=1600&auto=format&fit=crop"
+             alt="Equipo Paltas Beauty" />
+        <div>
+          <h3 class="text-3xl font-extrabold text-base">Quiénes Somos</h3>
+          <p class="mt-4 text-stone-700">
+            En <strong>Paltas Beauty</strong> creemos en el poder de lo natural para transformar tu piel y tu autoestima.
+            Acercamos lo mejor del <em>K-Beauty</em> con <strong>confianza, empatía e innovación</strong>, para que
+            descubras tu propia historia de belleza.
+          </p>
+          <p class="mt-4 text-stone-700">
+            <em>Slogan:</em> <strong>“Tu piel, tu historia, skincare para todos los relatos”.</strong>
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <span class="px-3 py-1 rounded-full bg-white shadow-card text-oliva text-sm">Empatía</span>
+            <span class="px-3 py-1 rounded-full bg-white shadow-card text-oliva text-sm">Confianza</span>
+            <span class="px-3 py-1 rounded-full bg-white shadow-card text-oliva text-sm">Innovación</span>
+          </div>
+          <a href="#" class="inline-flex mt-8 items-center rounded-full bg-primary px-6 py-3 font-bold text-white shadow-soft hover:opacity-95">Conócenos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brand strip -->
+    <section class="container mx-auto px-4 py-10">
+      <div class="flex flex-wrap items-center justify-between gap-6 opacity-70">
+        <span class="text-lg font-semibold">ETUDE HOUSE</span>
+        <span class="text-lg font-semibold">FRUDIA</span>
+        <span class="text-lg font-semibold">haruharu wonder</span>
+        <span class="text-lg font-semibold">heimish</span>
+        <span class="text-lg font-semibold">Klavuu</span>
+        <span class="text-lg font-semibold">Klavuu+</span>
+        <span class="text-lg font-semibold">mixsoon</span>
+        <span class="text-lg font-semibold">numbuzin</span>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white">
+    <div class="container mx-auto px-4 py-12 grid md:grid-cols-4 gap-10">
+      <div>
+        <h4 class="text-xl font-extrabold">Conecta con nosotros</h4>
+        <p class="mt-2 text-white/80">contacto@paltasbeauty.pe</p>
+        <p class="text-white/80">Teléfono: 999 999 999</p>
+        <div class="mt-4 flex gap-4">
+          <a href="#" class="hover:opacity-80 underline-offset-4">Instagram</a>
+          <a href="#" class="hover:opacity-80 underline-offset-4">TikTok</a>
+          <a href="#" class="hover:opacity-80 underline-offset-4">WhatsApp</a>
+        </div>
+      </div>
+
+      <div>
+        <h5 class="font-bold mb-3">Productos</h5>
+        <ul class="space-y-2 text-white/90">
+          <li><a href="#" class="hover:underline">Cuidado</a></li>
+          <li><a href="#" class="hover:underline">Maquillaje</a></li>
+          <li><a href="#" class="hover:underline">Corporal</a></li>
+          <li><a href="#" class="hover:underline">Marcas</a></li>
+          <li><a href="#" class="hover:underline">Ofertas</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="font-bold mb-3">Nuestra Empresa</h5>
+        <ul class="space-y-2 text-white/90">
+          <li><a href="#" class="hover:underline">Acerca de nosotros</a></li>
+          <li><a href="#" class="hover:underline">Tiendas físicas</a></li>
+          <li><a href="#" class="hover:underline">Términos y condiciones</a></li>
+          <li><a href="#" class="hover:underline">Preguntas frecuentes</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="font-bold mb-3">Te ayudamos</h5>
+        <ul class="space-y-2 text-white/90">
+          <li><a href="#" class="hover:underline">Libro de reclamaciones</a></li>
+          <li><a href="#" class="hover:underline">Atención al cliente</a></li>
+          <li><a href="#" class="hover:underline">Envíos y devoluciones</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-white/20">
+      <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-white/80 text-sm text-center md:text-left">
+          <strong>Paltas Beauty</strong> — 100% productos originales • Compras seguras • Envíos a todo el Perú
+        </p>
+        <p class="text-white/60 text-sm">© 2024 Paltas Beauty. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- (Opcional) JS mínimo si quieres rotar slides automáticamente -->
+  <script>
+    // Aquí podrías implementar un auto-rotador si agregas más slides al hero
+  </script>
+</body>
+</html>
