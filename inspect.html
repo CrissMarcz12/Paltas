@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paltas Beauty — Skincare</title>
+
+  <!-- Fonts + Tailwind -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Plus Jakarta Sans", "system-ui", "sans-serif"] },
+          colors: {
+            primary: "#5F8843",
+            oliva:   "#7D8451",
+            rosa:    "#F5B7C4",
+            coral:   "#FA9F66",
+            lima:    "#D7FBA4",
+            base:    "#0B0F0A",
+            paper:   "#F7F7F6"
+          },
+          boxShadow: {
+            card: "0 8px 24px rgba(0,0,0,.06)",
+            soft: "0 8px 40px rgba(95,136,67,.12)"
+          },
+          borderRadius: { xl: "1rem" }
+        }
+      }
+    }
+  </script>
+  <style>
+    .container { max-width: 1200px }
+    .badge { font-weight:700; font-size:.75rem; padding:.25rem .5rem; border-radius:9999px; background:#F5B7C4; color:#5F1133 }
+  </style>
+</head>
+<body class="bg-paper text-base text-base/relaxed text-stone-800">
+
+  <!-- Header / Navbar (versión para páginas internas) -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-stone-200">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between gap-6">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3">
+        <svg class="text-primary" width="28" height="28" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true">
+          <path d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.1614 31.6043 14.31 30.3636C8.1614 29.123 4 26.7382 4 24C4 21.2618 8.1614 18.877 14.31 17.6364C8.1614 16.3957 4 14.0109 4 11.2727C4 7.2561 12.9543 4 24 4C35.0457 4 44 7.2561 44 11.2727Z"/>
+        </svg>
+        <span class="text-xl font-extrabold tracking-tight">Paltas Beauty</span>
+      </a>
+
+      <!-- Botón móvil -->
+      <button id="btnMenu" class="lg:hidden h-10 w-10 rounded-full bg-lima/40 text-oliva grid place-items-center" aria-label="Abrir menú">
+        <svg width="18" height="18" viewBox="0 0 256 256" fill="currentColor"><path d="M40 64a8 8 0 0 1 8-8h160a8 8 0 0 1 0 16H48a8 8 0 0 1-8-8Zm0 64a8 8 0 0 1 8-8h160a8 8 0 0 1 0 16H48a8 8 0 0 1-8-8Zm8 56a8 8 0 0 0 0 16h160a8 8 0 0 0 0-16Z"/></svg>
+      </button>
+
+      <!-- Nav -->
+      <nav id="mainNav" class="hidden lg:flex items-center gap-6 text-[14px] font-semibold text-stone-700">
+        <!-- Marca active para esta página: Skincare -->
+        <a class="transition hover:text-oliva focus-visible:text-oliva active:text-oliva text-oliva underline underline-offset-4"
+           href="skincare.html">Skincare</a>
+
+        <a class="transition hover:text-oliva focus-visible:text-oliva active:text-oliva" href="maquillaje.html">Maquillaje</a>
+        <a class="transition hover:text-oliva focus-visible:text-oliva active:text-oliva" href="cuidado.html">Cuidado Corporal</a>
+        <a class="transition hover:text-oliva focus-visible:text-oliva active:text-oliva" href="joyas.html">Joyas</a>
+        <a class="transition hover:text-oliva focus-visible:text-oliva active:text-oliva" href="sale.html">Sale</a>
+        <a class="transition hover:text-oliva focus-visible:text-oliva active:text-oliva" href="kit.html">Kit y regalos</a>
+        <a class="transition hover:text-oliva focus-visible:text-oliva active:text-oliva" href="accesorios.html">Accesorios</a>
+        <a class="transition hover:text-oliva focus-visible:text-oliva active:text-oliva" href="asian.html">Asian Food</a>
+        <a class="transition hover:text-oliva focus-visible:text-oliva active:text-oliva" href="cabello.html">Cabello</a>
+      </nav>
+
+      <!-- Acciones -->
+      <div class="hidden lg:flex items-center gap-2">
+        <a href="buscar.html" class="h-10 w-10 rounded-full bg-lima/40 text-oliva hover:bg-lima/70 grid place-items-center" aria-label="Buscar">
+          <svg width="18" height="18" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"/></svg>
+        </a>
+        <a href="cuenta.html" class="h-10 w-10 rounded-full bg-lima/40 text-oliva hover:bg-lima/70 grid place-items-center" aria-label="Cuenta">
+          <svg width="18" height="18" viewBox="0 0 256 256" fill="currentColor"><path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"/></svg>
+        </a>
+        <a href="carrito.html" class="h-10 w-10 rounded-full bg-lima/40 text-oliva hover:bg-lima/70 grid place-items-center" aria-label="Carrito">
+          <svg width="18" height="18" viewBox="0 0 256 256" fill="currentColor"><path d="M216,40H48a8,8,0,0,0-7.8,6.1l-24,112A8,8,0,0,0,24,168H200a8,8,0,0,0,7.8-6.1l24-112A8,8,0,0,0,216,40ZM193.5,152H36.5L57.6,56H214.4ZM96,200a16,16,0,1,1-16-16A16,16,0,0,1,96,200Zm120,0a16,16,0,1,1-16-16A16,16,0,0,1,216,200Z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Menú móvil -->
+    <div id="mobileNav" class="lg:hidden hidden border-t border-stone-200 bg-white">
+      <div class="container mx-auto px-4 py-4 grid gap-3 text-[15px] font-semibold">
+        <a class="text-oliva underline underline-offset-4" href="skincare.html">Skincare</a>
+        <a href="maquillaje.html">Maquillaje</a>
+        <a href="corporal.html">Cuidado Corporal</a>
+        <a href="joyas.html">Joyas</a>
+        <a href="sale.html">Sale</a>
+        <a href="kits.html">Kit y regalos</a>
+        <a href="accesorios.html">Accesorios</a>
+        <a href="asian-food.html">Asian Food</a>
+        <a href="cabello.html">Cabello</a>
+      </div>
+    </div>
+  </header>
+<body>
+    <!-- MAIN: PDP con galería (3 fotos) + video TikTok al lado -->
+<main class="container mx-auto px-4 py-12">
+  <!-- Migas opcional -->
+  <nav class="mb-6 text-sm text-stone-500">
+    <a href="#" class="hover:underline">Maquillaje</a> <span class="mx-2">›</span>
+    <span class="text-stone-700">Cathy Doll Bounce Jelly Tint 5g</span>
+  </nav>
+
+  <!-- Top: Galería + Video + Info corta -->
+  <section class="grid gap-8 lg:grid-cols-2">
+    <!-- Galería izquierda -->
+    <div>
+      <!-- imagen principal -->
+      <div class="aspect-square rounded-2xl bg-white ring-1 ring-stone-200 shadow-[0_8px_30px_rgba(0,0,0,0.06)] overflow-hidden">
+        <img id="pdpMainImg"
+             src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?q=80&w=1600&auto=format&fit=crop"
+             alt="Cathy Doll Bounce Jelly Tint 5g"
+             class="w-full h-full object-cover transition duration-300">
+      </div>
+
+      <!-- miniaturas -->
+      <div class="mt-4 grid grid-cols-3 gap-3">
+        <button data-img="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?q=80&w=1600&auto=format&fit=crop"
+                class="aspect-square rounded-xl ring-1 ring-stone-200 overflow-hidden hover:ring-primary/60">
+          <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?q=80&w=500&auto=format&fit=crop"
+               class="w-full h-full object-cover" alt="thumb 1">
+        </button>
+        <button data-img="https://images.unsplash.com/photo-1619451334796-5c0067b3d2c5?q=80&w=1600&auto=format&fit=crop"
+                class="aspect-square rounded-xl ring-1 ring-stone-200 overflow-hidden hover:ring-primary/60">
+          <img src="https://images.unsplash.com/photo-1619451334796-5c0067b3d2c5?q=80&w=500&auto=format&fit=crop"
+               class="w-full h-full object-cover" alt="thumb 2">
+        </button>
+        <button data-img="https://images.unsplash.com/photo-1629198735660-79e2f5c2a3d2?q=80&w=1600&auto=format&fit=crop"
+                class="aspect-square rounded-xl ring-1 ring-stone-200 overflow-hidden hover:ring-primary/60">
+          <img src="https://images.unsplash.com/photo-1629198735660-79e2f5c2a3d2?q=80&w=500&auto=format&fit=crop"
+               class="w-full h-full object-cover" alt="thumb 3">
+        </button>
+      </div>
+    </div>
+
+    <!-- Columna derecha: Video + título + rating + precio + CTA -->
+    <div>
+      <!-- video TikTok (vertical) -->
+      <div class="rounded-2xl overflow-hidden ring-1 ring-stone-200 shadow-[0_8px_30px_rgba(0,0,0,0.06)]">
+        <!-- TikTok embed (reemplaza la URL por la de tu video) -->
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@tiktok/video/7221126921271264518" data-video-id="7221126921271264518" style="max-width: 100%; min-width: 300px;">
+          <section> </section>
+        </blockquote>
+        <script async src="https://www.tiktok.com/embed.js"></script>
+      </div>
+
+      <!-- info corta -->
+      <div class="mt-5">
+        <div class="inline-flex items-center gap-2 rounded-full bg-lima/20 text-oliva px-3 py-1 text-[11px] font-semibold tracking-wide">
+          <span class="h-1.5 w-1.5 rounded-full bg-oliva"></span> ÚLTIMAS UNIDADES
+        </div>
+
+        <h1 class="mt-3 text-2xl md:text-3xl font-extrabold text-base">
+          Cathy Doll Bounce Jelly Tint 5g
+        </h1>
+
+        <!-- rating -->
+        <div class="mt-2 flex items-center gap-2 text-sm">
+          <div class="flex items-center text-amber-500" aria-label="rating 4.5">
+            <svg class="size-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.562-.954L10 0l2.948 5.956 6.562.954-4.755 4.635 1.123 6.545z"/></svg>
+            <svg class="size-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.562-.954L10 0l2.948 5.956 6.562.954-4.755 4.635 1.123 6.545z"/></svg>
+            <svg class="size-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.562-.954L10 0l2.948 5.956 6.562.954-4.755 4.635 1.123 6.545z"/></svg>
+            <svg class="size-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.562-.954L10 0l2.948 5.956 6.562.954-4.755 4.635 1.123 6.545z"/></svg>
+            <svg class="size-4 opacity-40" viewBox="0 0 20 20" fill="currentColor"><path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.562-.954L10 0l2.948 5.956 6.562.954-4.755 4.635 1.123 6.545z"/></svg>
+          </div>
+          <span class="text-stone-500">(23)</span>
+          <a href="#reviews" class="text-oliva font-semibold hover:underline">Calificar</a>
+        </div>
+
+        <!-- precio -->
+        <div class="mt-3 flex items-end gap-3">
+          <span class="text-2xl font-extrabold text-primary">S/ 56.00</span>
+          <span class="text-sm text-stone-400 line-through">S/ 65.00</span>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-4 flex flex-wrap items-center gap-3">
+          <button class="inline-flex items-center justify-center rounded-2xl bg-primary/90 px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary transition">
+            Añadir al carrito
+          </button>
+          <button class="inline-flex items-center justify-center rounded-2xl border border-oliva px-5 py-2.5 text-sm font-semibold text-oliva hover:bg-lima/30 transition">
+            Comprar ahora
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Descripción e Ingredientes -->
+  <section class="mt-10 grid gap-8 lg:grid-cols-[1.2fr,0.8fr]">
+    <article class="rounded-3xl bg-white p-6 shadow-soft">
+      <h2 class="text-xl font-bold text-base">Descripción</h2>
+      <p class="mt-3 text-stone-700 leading-7">
+        <strong>Cathy Doll Bounce Jelly Tint</strong> es un tinte multifunción con textura gelatina
+        para labios y mejillas. Su fórmula ligera se difumina sin esfuerzo, dejando un acabado jugoso
+        y duradero sin sensación pegajosa. Perfecto para looks naturales con efecto “rubor saludable”.
+      </p>
+      <h3 class="mt-6 font-semibold text-base">Ingredientes principales</h3>
+      <ul class="mt-2 list-disc pl-5 text-stone-700 space-y-1">
+        <li>Extracto de Flor de Caléndula — calma y suaviza.</li>
+        <li>Árbol de Té — ayuda a mantener la piel limpia.</li>
+        <li>Aceite de Semilla de Girasol — hidrata y protege.</li>
+        <li>Vitamina E — antioxidante contra radicales libres.</li>
+      </ul>
+    </article>
+
+    <!-- Ficha corta / Envíos / Garantía -->
+    <aside class="space-y-4">
+      <div class="rounded-3xl bg-white p-6 shadow-soft">
+        <h4 class="font-semibold text-base">Detalles rápidos</h4>
+        <ul class="mt-3 space-y-2 text-sm text-stone-700">
+          <li>Contenido: 5g</li>
+          <li>Acabado: Jelly/Glassy</li>
+          <li>Apto para: Labios y mejillas</li>
+          <li>Origen: Tailandia</li>
+        </ul>
+      </div>
+      <div class="rounded-3xl bg-white p-6 shadow-soft">
+        <h4 class="font-semibold text-base">Envíos & Cambios</h4>
+        <p class="mt-2 text-sm text-stone-700">Envíos a todo el Perú. Cambios/Devoluciones dentro de 7 días hábiles.</p>
+      </div>
+    </aside>
+  </section>
+
+  <!-- Reseñas -->
+  <section id="reviews" class="mt-12 space-y-4 md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+    <article class="rounded-3xl bg-white p-6 shadow-soft">
+      <div class="flex items-center justify-between">
+        <h4 class="text-base font-semibold">Milagros C.</h4>
+        <span class="text-sm text-oliva">★★★★★</span>
+      </div>
+      <p class="mt-2 text-sm text-stone-600">“El tono ‘Peach Jelly’ dura horas y no reseca. 10/10.”</p>
+      <p class="mt-3 text-xs text-stone-400">02/2024</p>
+    </article>
+    <article class="rounded-3xl bg-white p-6 shadow-soft">
+      <div class="flex items-center justify-between">
+        <h4 class="text-base font-semibold">Andrea R.</h4>
+        <span class="text-sm text-oliva">★★★★☆</span>
+      </div>
+      <p class="mt-2 text-sm text-stone-600">“Se difumina perfecto en mejillas y deja brillo natural.”</p>
+      <p class="mt-3 text-xs text-stone-400">01/2024</p>
+    </article>
+    <article class="rounded-3xl bg-white p-6 shadow-soft">
+      <div class="flex items-center justify-between">
+        <h4 class="text-base font-semibold">Lucía M.</h4>
+        <span class="text-sm text-oliva">★★★★★</span>
+      </div>
+      <p class="mt-2 text-sm text-stone-600">“Color vibrante sin sensación pegajosa. Recomendado.”</p>
+      <p class="mt-3 text-xs text-stone-400">12/2023</p>
+    </article>
+  </section>
+</main>
+
+<!-- JS mínimo para cambiar la imagen principal desde las miniaturas -->
+<script>
+  document.querySelectorAll('[data-img]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const url = btn.getAttribute('data-img');
+      const main = document.getElementById('pdpMainImg');
+      if (main && url) main.src = url;
+    });
+  });
+</script>
+<!-- PRODUCTOS RELACIONADOS -->
+<section class="container mx-auto px-4 py-12">
+  <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-base">Productos relacionados</h2>
+
+  <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    <!-- Card 1 -->
+    <article class="rounded-3xl bg-white p-6 shadow-[0_8px_28px_rgba(0,0,0,.06)] ring-1 ring-stone-200/60">
+      <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-white">
+        <img
+          src="https://images.unsplash.com/photo-1612700438985-691f56a34a4e?q=80&w=1200&auto=format&fit=crop"
+          class="w-full h-full object-contain"
+          alt="Cathy Doll Air Relax Lip Blur 3.5g">
+      </div>
+      <h3 class="mt-4 text-sm font-semibold text-stone-800">
+        Cathy Doll Air Relax Lip Blur 3.5g
+      </h3>
+      <p class="mt-2 text-primary text-xl font-extrabold">S/ 60.00</p>
+      <a href="inspect.html"
+         class="mt-4 inline-flex w-full items-center justify-center rounded-full border-2 border-oliva/40 px-5 py-2.5 text-sm font-semibold text-oliva hover:bg-lima/30">
+        Ver opciones
+      </a>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="rounded-3xl bg-white p-6 shadow-[0_8px_28px_rgba(0,0,0,.06)] ring-1 ring-stone-200/60">
+      <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-white">
+        <img
+          src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop"
+          class="w-full h-full object-contain"
+          alt="Cathy Doll Ultra Slim Gel Liner 0.07g">
+      </div>
+      <h3 class="mt-4 text-sm font-semibold text-stone-800">
+        Cathy Doll Ultra Slim Gel Liner 0.07g
+      </h3>
+      <p class="mt-2 text-primary text-xl font-extrabold">S/ 35.00</p>
+      <a href="inspect.html"
+         class="mt-4 inline-flex w-full items-center justify-center rounded-full border-2 border-oliva/40 px-5 py-2.5 text-sm font-semibold text-oliva hover:bg-lima/30">
+        Ver opciones
+      </a>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="rounded-3xl bg-white p-6 shadow-[0_8px_28px_rgba(0,0,0,.06)] ring-1 ring-stone-200/60">
+      <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-white">
+        <img
+          src="https://images.unsplash.com/photo-1585386959984-a41552231658?q=80&w=1200&auto=format&fit=crop"
+          class="w-full h-full object-contain"
+          alt="Cathy Doll CC Speed White X3 Pact">
+      </div>
+      <h3 class="mt-4 text-sm font-semibold text-stone-800">
+        Cathy Doll CC Speed White X3 Powder Pact SPF40 PA+++ 12g
+      </h3>
+      <p class="mt-2 text-primary text-xl font-extrabold">S/ 60.00</p>
+      <a href="inspect.html"
+         class="mt-4 inline-flex w-full items-center justify-center rounded-full border-2 border-oliva/40 px-5 py-2.5 text-sm font-semibold text-oliva hover:bg-lima/30">
+        Ver opciones
+      </a>
+    </article>
+
+    <!-- Card 4 -->
+    <article class="rounded-3xl bg-white p-6 shadow-[0_8px_28px_rgba(0,0,0,.06)] ring-1 ring-stone-200/60">
+      <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-white">
+        <img
+          src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?q=80&w=1200&auto=format&fit=crop"
+          class="w-full h-full object-contain"
+          alt="Baby Bright Gentle Matte Collagen Lipstick 3.7g">
+      </div>
+      <h3 class="mt-4 text-sm font-semibold text-stone-800">
+        Baby Bright Gentle Matte Collagen Lipstick 3.7g
+      </h3>
+      <p class="mt-2 text-primary text-xl font-extrabold">S/ 45.00</p>
+      <a href="inspect.html"
+         class="mt-4 inline-flex w-full items-center justify-center rounded-full border-2 border-oliva/40 px-5 py-2.5 text-sm font-semibold text-oliva hover:bg-lima/30">
+        Ver opciones
+      </a>
+    </article>
+  </div>
+</section>
+
+
+    <!-- Main -->
+<!-- Rutina coreana --> <section id="rutina-coreana" class="container mx-auto px-4 py-16"> <div class="rounded-3xl bg-white p-8 shadow-soft"> <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between"> <div> <h3 class="text-3xl font-extrabold text-base">Rutina coreana de 7 pasos</h3> <p class="mt-2 text-stone-600">Guía rápida de cuidado de piel inspirada en los talleres de Ana Palta. Si no contamos con la imagen definitiva, dejamos un recordatorio visual del recurso a colocar.</p> </div> <span class="rounded-full bg-lima/40 px-4 py-1 text-xs font-semibold text-oliva">Contenido educativo</span> </div> <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4"> <div class="rounded-3xl border border-oliva/30 p-5 text-sm text-stone-600"> <p class="font-semibold text-base">1. Doble limpieza</p> <p class="mt-2">Aceite + espuma para retirar maquillaje. <span class="italic">(Imagen de aceite limpiador irá aquí)</span></p> </div> <div class="rounded-3xl border border-oliva/30 p-5 text-sm text-stone-600"> <p class="font-semibold text-base">2. Exfoliación suave</p> <p class="mt-2">Peelings químicos para afinar textura 1-2 veces por semana. <span class="italic">(Video tutorial irá aquí)</span></p> </div> <div class="rounded-3xl border border-oliva/30 p-5 text-sm text-stone-600"> <p class="font-semibold text-base">3. Tónico hidratante</p> <p class="mt-2">Reponemos humedad con esencias ligeras. <span class="italic">(Imagen de tónico irá aquí)</span></p> </div> <div class="rounded-3xl border border-oliva/30 p-5 text-sm text-stone-600"> <p class="font-semibold text-base">4. Serum especializado</p> <p class="mt-2">Ingredientes activos según la necesidad. <span class="italic">(Video explicativo irá aquí)</span></p> </div> <div class="rounded-3xl border border-oliva/30 p-5 text-sm text-stone-600"> <p class="font-semibold text-base">5. Mascarilla</p> <p class="mt-2">Sheet mask nutritiva 2-3 veces por semana. <span class="italic">(Imagen de sheet mask irá aquí)</span></p> </div> <div class="rounded-3xl border border-oliva/30 p-5 text-sm text-stone-600"> <p class="font-semibold text-base">6. Crema hidratante</p> <p class="mt-2">Sellamos hidratación con texturas nutritivas. <span class="italic">(Video corto irá aquí)</span></p> </div> <div class="rounded-3xl border border-oliva/30 p-5 text-sm text-stone-600"> <p class="font-semibold text-base">7. Protector solar</p> <p class="mt-2">Imprescindible cada mañana. <span class="italic">(Imagen de protector irá aquí)</span></p> </div> <div class="rounded-3xl border border-oliva/30 p-5 text-sm text-stone-600"> <p class="font-semibold text-base">Bonus: Cuidado nocturno</p> <p class="mt-2">Sleeping packs y masajes con gua sha. <span class="italic">(Video ira acá)</span></p> </div> </div> </div> </section> 
+</body>
+
+
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white">
+    <div class="container mx-auto px-4 py-12 grid md:grid-cols-4 gap-10">
+      <div>
+        <h4 class="text-xl font-extrabold">Conecta con nosotros</h4>
+        <p class="mt-2 text-white/80">contacto@paltasbeauty.pe</p>
+        <p class="text-white/80">Teléfono: 999 999 999</p>
+        <div class="mt-4 flex gap-4">
+          <a href="#" class="hover:opacity-80 underline-offset-4">Instagram</a>
+          <a href="#" class="hover:opacity-80 underline-offset-4">TikTok</a>
+          <a href="#" class="hover:opacity-80 underline-offset-4">WhatsApp</a>
+        </div>
+      </div>
+
+      <div>
+        <h5 class="font-bold mb-3">Productos</h5>
+        <ul class="space-y-2 text-white/90">
+          <li><a href="skincare.html" class="hover:underline">Cuidado</a></li>
+          <li><a href="maquillaje.html" class="hover:underline">Maquillaje</a></li>
+          <li><a href="corporal.html" class="hover:underline">Corporal</a></li>
+          <li><a href="marcas.html" class="hover:underline">Marcas</a></li>
+          <li><a href="sale.html" class="hover:underline">Ofertas</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="font-bold mb-3">Nuestra Empresa</h5>
+        <ul class="space-y-2 text-white/90">
+          <li><a href="acerca.html" class="hover:underline">Acerca de nosotros</a></li>
+          <li><a href="tiendas.html" class="hover:underline">Tiendas físicas</a></li>
+          <li><a href="terminos.html" class="hover:underline">Términos y condiciones</a></li>
+          <li><a href="preguntas.html" class="hover:underline">Preguntas frecuentes</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="font-bold mb-3">Te ayudamos</h5>
+        <ul class="space-y-2 text-white/90">
+          <li><a href="libro-reclamaciones.html" class="hover:underline">Libro de reclamaciones</a></li>
+          <li><a href="atencion.html" class="hover:underline">Atención al cliente</a></li>
+          <li><a href="envios-devoluciones.html" class="hover:underline">Envíos y devoluciones</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-white/20">
+      <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-white/80 text-sm text-center md:text-left">
+          <strong>Paltas Beauty</strong> — 100% productos originales • Compras seguras • Envíos a todo el Perú
+        </p>
+        <p class="text-white/60 text-sm">© 2024 Paltas Beauty. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS mínimo: menú móvil -->
+  <script>
+    const btn = document.getElementById('btnMenu');
+    const mobile = document.getElementById('mobileNav');
+    if (btn && mobile) {
+      btn.addEventListener('click', () => {
+        mobile.classList.toggle('hidden');
+      });
+    }
+  </script>
+</body>
+</html>

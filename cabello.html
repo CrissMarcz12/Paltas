@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paltas Beauty — Skincare</title>
+
+  <!-- Fonts + Tailwind -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Plus Jakarta Sans", "system-ui", "sans-serif"] },
+          colors: {
+            primary: "#5F8843",
+            oliva:   "#7D8451",
+            rosa:    "#F5B7C4",
+            coral:   "#FA9F66",
+            lima:    "#D7FBA4",
+            base:    "#0B0F0A",
+            paper:   "#F7F7F6"
+          },
+          boxShadow: {
+            card: "0 8px 24px rgba(0,0,0,.06)",
+            soft: "0 8px 40px rgba(95,136,67,.12)"
+          },
+          borderRadius: { xl: "1rem" }
+        }
+      }
+    }
+  </script>
+  <style>
+    .container { max-width: 1200px }
+    .badge { font-weight:700; font-size:.75rem; padding:.25rem .5rem; border-radius:9999px; background:#F5B7C4; color:#5F1133 }
+  </style>
+</head>
+<body class="bg-paper text-base text-base/relaxed text-stone-800">
+
+  <!-- Header / Navbar (versión para páginas internas) -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-stone-200">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between gap-6">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3">
+        <svg class="text-primary" width="28" height="28" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true">
+          <path d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.1614 31.6043 14.31 30.3636C8.1614 29.123 4 26.7382 4 24C4 21.2618 8.1614 18.877 14.31 17.6364C8.1614 16.3957 4 14.0109 4 11.2727C4 7.2561 12.9543 4 24 4C35.0457 4 44 7.2561 44 11.2727Z"/>
+        </svg>
+        <span class="text-xl font-extrabold tracking-tight">Paltas Beauty</span>
+      </a>
+
+      <!-- Botón móvil -->
+      <button id="btnMenu" class="lg:hidden h-10 w-10 rounded-full bg-lima/40 text-oliva grid place-items-center" aria-label="Abrir menú">
+        <svg width="18" height="18" viewBox="0 0 256 256" fill="currentColor"><path d="M40 64a8 8 0 0 1 8-8h160a8 8 0 0 1 0 16H48a8 8 0 0 1-8-8Zm0 64a8 8 0 0 1 8-8h160a8 8 0 0 1 0 16H48a8 8 0 0 1-8-8Zm8 56a8 8 0 0 0 0 16h160a8 8 0 0 0 0-16Z"/></svg>
+      </button>
+
+      <!-- Nav -->
+      <nav id="mainNav" class="hidden lg:flex items-center gap-6 text-[14px] font-semibold text-stone-700">
+        <!-- Marca active para esta página: Skincare -->
+        <a class="transition hover:text-oliva focus-visible:text-oliva active:text-oliva text-oliva underline underline-offset-4"
+           href="skincare.html">Skincare</a>
+
+        <a class="transition hover:text-oliva focus-visible:text-oliva active:text-oliva" href="maquillaje.html">Maquillaje</a>
+        <a class="transition hover:text-oliva focus-visible:text-oliva active:text-oliva" href="cuidado.html">Cuidado Corporal</a>
+        <a class="transition hover:text-oliva focus-visible:text-oliva active:text-oliva" href="joyas.html">Joyas</a>
+        <a class="transition hover:text-oliva focus-visible:text-oliva active:text-oliva" href="sale.html">Sale</a>
+        <a class="transition hover:text-oliva focus-visible:text-oliva active:text-oliva" href="kit.html">Kit y regalos</a>
+        <a class="transition hover:text-oliva focus-visible:text-oliva active:text-oliva" href="accesorios.html">Accesorios</a>
+        <a class="transition hover:text-oliva focus-visible:text-oliva active:text-oliva" href="asian.html">Asian Food</a>
+        <a class="transition hover:text-oliva focus-visible:text-oliva active:text-oliva" href="cabello.html">Cabello</a>
+      </nav>
+
+      <!-- Acciones -->
+      <div class="hidden lg:flex items-center gap-2">
+        <a href="buscar.html" class="h-10 w-10 rounded-full bg-lima/40 text-oliva hover:bg-lima/70 grid place-items-center" aria-label="Buscar">
+          <svg width="18" height="18" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"/></svg>
+        </a>
+        <a href="cuenta.html" class="h-10 w-10 rounded-full bg-lima/40 text-oliva hover:bg-lima/70 grid place-items-center" aria-label="Cuenta">
+          <svg width="18" height="18" viewBox="0 0 256 256" fill="currentColor"><path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"/></svg>
+        </a>
+        <a href="carrito.html" class="h-10 w-10 rounded-full bg-lima/40 text-oliva hover:bg-lima/70 grid place-items-center" aria-label="Carrito">
+          <svg width="18" height="18" viewBox="0 0 256 256" fill="currentColor"><path d="M216,40H48a8,8,0,0,0-7.8,6.1l-24,112A8,8,0,0,0,24,168H200a8,8,0,0,0,7.8-6.1l24-112A8,8,0,0,0,216,40ZM193.5,152H36.5L57.6,56H214.4ZM96,200a16,16,0,1,1-16-16A16,16,0,0,1,96,200Zm120,0a16,16,0,1,1-16-16A16,16,0,0,1,216,200Z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Menú móvil -->
+    <div id="mobileNav" class="lg:hidden hidden border-t border-stone-200 bg-white">
+      <div class="container mx-auto px-4 py-4 grid gap-3 text-[15px] font-semibold">
+        <a class="text-oliva underline underline-offset-4" href="skincare.html">Skincare</a>
+        <a href="maquillaje.html">Maquillaje</a>
+        <a href="corporal.html">Cuidado Corporal</a>
+        <a href="joyas.html">Joyas</a>
+        <a href="sale.html">Sale</a>
+        <a href="kits.html">Kit y regalos</a>
+        <a href="accesorios.html">Accesorios</a>
+        <a href="asian-food.html">Asian Food</a>
+        <a href="cabello.html">Cabello</a>
+      </div>
+    </div>
+  </header>
+
+<!-- CABELLO: Filtros + Grid -->
+<section class="container mx-auto px-4 py-10">
+  <!-- encabezado + ordenar -->
+  <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+    <div>
+      <h1 class="text-3xl font-extrabold text-primary">Cabello</h1>
+      <p class="text-sm text-stone-600">Shampoo, acondicionadores y tratamientos para todo tipo de cabello.</p>
+    </div>
+    <div class="flex items-center gap-3">
+      <label for="order-hair" class="text-sm font-semibold text-stone-600">Ordenar por</label>
+      <div class="relative">
+        <select id="order-hair" class="appearance-none rounded-full border border-oliva/30 bg-white px-4 py-2 text-sm pr-9">
+          <option>Relevancia</option>
+          <option>Precio: menor a mayor</option>
+          <option>Precio: mayor a menor</option>
+          <option>Novedades</option>
+          <option>Descuento</option>
+        </select>
+        <span class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-stone-400">▾</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-8 grid gap-8 lg:grid-cols-[280px,1fr]">
+    <!-- Sidebar filtros -->
+    <aside class="space-y-10">
+      <!-- Precio -->
+      <div>
+        <h3 class="text-base font-extrabold">Precio</h3>
+        <div class="mt-3">
+          <input id="hairRange" type="range" min="20" max="180" value="95" class="w-full accent-oliva" />
+          <div class="mt-2 flex items-center justify-between text-sm">
+            <span class="inline-flex items-center gap-1 rounded-full bg-stone-100 px-3 py-1">
+              <small>Min</small> <strong>S/ <span id="hairMin">20</span></strong>
+            </span>
+            <span class="inline-flex items-center gap-1 rounded-full bg-stone-100 px-3 py-1">
+              <small>Max</small> <strong>S/ <span id="hairMax">95</span></strong>
+            </span>
+          </div>
+          <p class="mt-2 text-xs text-stone-500">Demostración visual (sin lógica de filtrado).</p>
+        </div>
+      </div>
+
+      <!-- Categorías -->
+      <div>
+        <h3 class="text-base font-extrabold">Categorías</h3>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li class="flex items-center gap-3">
+            <input id="h-all" type="checkbox" checked class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
+            <label for="h-all" class="flex-1">Todas</label>
+          </li>
+        </ul>
+
+        <div class="mt-5">
+          <p class="text-sm font-semibold text-stone-700">Tipo de producto</p>
+          <ul class="mt-2 space-y-2 text-sm">
+            <li class="flex items-center gap-3">
+              <input id="h-shampoo" type="checkbox" class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
+              <label for="h-shampoo" class="flex-1">Shampoo</label>
+            </li>
+            <li class="flex items-center gap-3">
+              <input id="h-acond" type="checkbox" class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
+              <label for="h-acond" class="flex-1">Acondicionador</label>
+            </li>
+            <li class="flex items-center gap-3">
+              <input id="h-masc" type="checkbox" class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
+              <label for="h-masc" class="flex-1">Mascarillas / Ampollas</label>
+            </li>
+            <li class="flex items-center gap-3">
+              <input id="h-trat" type="checkbox" class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
+              <label for="h-trat" class="flex-1">Tratamientos (anticaída / cuero cabelludo)</label>
+            </li>
+            <li class="flex items-center gap-3">
+              <input id="h-aceite" type="checkbox" class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
+              <label for="h-aceite" class="flex-1">Aceites / Sérums</label>
+            </li>
+            <li class="flex items-center gap-3">
+              <input id="h-styling" type="checkbox" class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
+              <label for="h-styling" class="flex-1">Styling / Protección térmica</label>
+            </li>
+            <li class="flex items-center gap-3">
+              <input id="h-anticaspa" type="checkbox" class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
+              <label for="h-anticaspa" class="flex-1">Anticaspa</label>
+            </li>
+            <li class="flex items-center gap-3">
+              <input id="h-sinSulfatos" type="checkbox" class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
+              <label for="h-sinSulfatos" class="flex-1">Sin sulfatos / Low-poo</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Grid productos -->
+    <section aria-label="Resultados" class="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+      <!-- Card 1 -->
+      <article class="rounded-2xl bg-white p-4 shadow-[0_8px_28px_rgba(0,0,0,.06)]">
+        <div class="relative overflow-hidden rounded-xl">
+          <img class="w-full aspect-[4/3] object-cover"
+               src="https://images.unsplash.com/photo-1626947345936-325edd5d7b8a?q=80&w=1200&auto=format&fit=crop"
+               alt="Shampoo nutritivo">
+        </div>
+        <div class="mt-4 space-y-1">
+          <p class="text-xs uppercase tracking-wide text-stone-500">Attitude</p>
+          <h3 class="font-semibold">Shampoo Nutritivo</h3>
+          <div class="mt-1 flex items-baseline gap-2">
+            <span class="text-primary text-lg font-extrabold">S/. 45.00</span>
+          </div>
+          <button class="mt-3 w-full rounded-full border-2 border-rosa py-2.5 font-bold text-oliva hover:bg-rosa/10">
+            Añadir al carrito
+          </button>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="rounded-2xl bg-white p-4 shadow-[0_8px_28px_rgba(0,0,0,.06)]">
+        <div class="relative overflow-hidden rounded-xl">
+          <img class="w-full aspect-[4/3] object-cover"
+               src="https://images.unsplash.com/photo-1622470953794-1a8f9e2d7a1f?q=80&w=1200&auto=format&fit=crop"
+               alt="Acondicionador hidratante">
+        </div>
+        <div class="mt-4 space-y-1">
+          <p class="text-xs uppercase tracking-wide text-stone-500">Haruen</p>
+          <h3 class="font-semibold">Acondicionador Hidratante</h3>
+          <div class="mt-1 flex items-baseline gap-2">
+            <span class="text-primary text-lg font-extrabold">S/. 48.00</span>
+          </div>
+          <button class="mt-3 w-full rounded-full border-2 border-rosa py-2.5 font-bold text-oliva hover:bg-rosa/10">
+            Añadir al carrito
+          </button>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="rounded-2xl bg-white p-4 shadow-[0_8px_28px_rgba(0,0,0,.06)]">
+        <div class="relative overflow-hidden rounded-xl">
+          <img class="w-full aspect-[4/3] object-cover"
+               src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop"
+               alt="Mascarilla capilar">
+        </div>
+        <div class="mt-4 space-y-1">
+          <p class="text-xs uppercase tracking-wide text-stone-500">Mixsoon</p>
+          <h3 class="font-semibold">Mascarilla Capilar Reparadora</h3>
+          <div class="mt-1 flex items-baseline gap-2">
+            <span class="text-primary text-lg font-extrabold">S/. 62.00</span>
+          </div>
+          <button class="mt-3 w-full rounded-full border-2 border-rosa py-2.5 font-bold text-oliva hover:bg-rosa/10">
+            Añadir al carrito
+          </button>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="rounded-2xl bg-white p-4 shadow-[0_8px_28px_rgba(0,0,0,.06)]">
+        <div class="relative overflow-hidden rounded-xl">
+          <img class="w-full aspect-[4/3] object-cover"
+               src="https://images.unsplash.com/photo-1615494001730-9b7f2f0b2a7e?q=80&w=1200&auto=format&fit=crop"
+               alt="Aceite capilar">
+        </div>
+        <div class="mt-4 space-y-1">
+          <p class="text-xs uppercase tracking-wide text-stone-500">K-Hair</p>
+          <h3 class="font-semibold">Aceite Capilar Brillo Intenso</h3>
+          <div class="mt-1 flex items-baseline gap-2">
+            <span class="text-primary text-lg font-extrabold">S/. 55.00</span>
+          </div>
+          <button class="mt-3 w-full rounded-full border-2 border-rosa py-2.5 font-bold text-oliva hover:bg-rosa/10">
+            Añadir al carrito
+          </button>
+        </div>
+      </article>
+    </section>
+  </div>
+</section>
+
+<!-- JS mínimo para rango de precio (demo) -->
+<script>
+  const hairSlider = document.getElementById('hairRange');
+  const hairMin = document.getElementById('hairMin');
+  const hairMax = document.getElementById('hairMax');
+  if (hairSlider) {
+    const min = Number(hairSlider.min);
+    hairSlider.addEventListener('input', () => {
+      hairMin.textContent = min;
+      hairMax.textContent = hairSlider.value;
+    });
+  }
+</script>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white">
+    <div class="container mx-auto px-4 py-12 grid md:grid-cols-4 gap-10">
+      <div>
+        <h4 class="text-xl font-extrabold">Conecta con nosotros</h4>
+        <p class="mt-2 text-white/80">contacto@paltasbeauty.pe</p>
+        <p class="text-white/80">Teléfono: 999 999 999</p>
+        <div class="mt-4 flex gap-4">
+          <a href="#" class="hover:opacity-80 underline-offset-4">Instagram</a>
+          <a href="#" class="hover:opacity-80 underline-offset-4">TikTok</a>
+          <a href="#" class="hover:opacity-80 underline-offset-4">WhatsApp</a>
+        </div>
+      </div>
+
+      <div>
+        <h5 class="font-bold mb-3">Productos</h5>
+        <ul class="space-y-2 text-white/90">
+          <li><a href="skincare.html" class="hover:underline">Cuidado</a></li>
+          <li><a href="maquillaje.html" class="hover:underline">Maquillaje</a></li>
+          <li><a href="corporal.html" class="hover:underline">Corporal</a></li>
+          <li><a href="marcas.html" class="hover:underline">Marcas</a></li>
+          <li><a href="sale.html" class="hover:underline">Ofertas</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="font-bold mb-3">Nuestra Empresa</h5>
+        <ul class="space-y-2 text-white/90">
+          <li><a href="acerca.html" class="hover:underline">Acerca de nosotros</a></li>
+          <li><a href="tiendas.html" class="hover:underline">Tiendas físicas</a></li>
+          <li><a href="terminos.html" class="hover:underline">Términos y condiciones</a></li>
+          <li><a href="preguntas.html" class="hover:underline">Preguntas frecuentes</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="font-bold mb-3">Te ayudamos</h5>
+        <ul class="space-y-2 text-white/90">
+          <li><a href="libro-reclamaciones.html" class="hover:underline">Libro de reclamaciones</a></li>
+          <li><a href="atencion.html" class="hover:underline">Atención al cliente</a></li>
+          <li><a href="envios-devoluciones.html" class="hover:underline">Envíos y devoluciones</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-white/20">
+      <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-white/80 text-sm text-center md:text-left">
+          <strong>Paltas Beauty</strong> — 100% productos originales • Compras seguras • Envíos a todo el Perú
+        </p>
+        <p class="text-white/60 text-sm">© 2024 Paltas Beauty. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS mínimo: menú móvil -->
+  <script>
+    const btn = document.getElementById('btnMenu');
+    const mobile = document.getElementById('mobileNav');
+    if (btn && mobile) {
+      btn.addEventListener('click', () => {
+        mobile.classList.toggle('hidden');
+      });
+    }
+  </script>
+</body>
+</html>
