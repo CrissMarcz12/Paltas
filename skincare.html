@@ -126,57 +126,85 @@
   </div>
 
   <div class="mt-8 grid gap-8 lg:grid-cols-[280px,1fr]">
-    <!-- Sidebar filtros -->
-    <aside class="space-y-8">
-     
+<!-- Sidebar filtros -->
+<aside class="space-y-10">
 
-      <!-- Categorías (en lugar de Marcas) -->
-      <div>
-        <h3 class="text-base font-extrabold">Categorías</h3>
-        <ul class="mt-3 space-y-2 text-sm">
-          <li class="flex items-center gap-3">
-            <input id="cat-all" type="checkbox" checked class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
-            <label for="cat-all" class="flex-1">Todas</label>
-          </li>
-          <li class="flex items-center gap-3">
-            <input id="cat-exf" type="checkbox" class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
-            <label for="cat-exf" class="flex-1">Exfoliantes</label>
-          </li>
-          <li class="flex items-center gap-3">
-            <input id="cat-hid" type="checkbox" class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
-            <label for="cat-hid" class="flex-1">Hidratantes</label>
-          </li>
-          <li class="flex items-center gap-3">
-            <input id="cat-ton" type="checkbox" class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
-            <label for="cat-ton" class="flex-1">Tónicos</label>
-          </li>
-          <li class="flex items-center gap-3">
-            <input id="cat-ser" type="checkbox" class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
-            <label for="cat-ser" class="flex-1">Sérums</label>
-          </li>
-          <li class="flex items-center gap-3">
-            <input id="cat-mask" type="checkbox" class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
-            <label for="cat-mask" class="flex-1">Mascarillas</label>
-          </li>
-          <li class="flex items-center gap-3">
-            <input id="cat-sun" type="checkbox" class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
-            <label for="cat-sun" class="flex-1">Protector solar</label>
-          </li>
-          <li class="flex items-center gap-3">
-            <input id="cat-clean" type="checkbox" class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
-            <label for="cat-clean" class="flex-1">Limpieza (aceite/foam)</label>
-          </li>
-          <li class="flex items-center gap-3">
-            <input id="cat-essence" type="checkbox" class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
-            <label for="cat-essence" class="flex-1">Esencias</label>
-          </li>
-          <li class="flex items-center gap-3">
-            <input id="cat-pads" type="checkbox" class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
-            <label for="cat-pads" class="flex-1">Pads</label>
-          </li>
-        </ul>
-      </div>
-    </aside>
+  <!-- Tipo de piel -->
+  <div>
+    <h3 class="text-base font-extrabold">Tipo de piel</h3>
+    <ul class="mt-3 space-y-2 text-sm">
+      <li class="flex items-center gap-3">
+        <input id="skin-all" type="checkbox" checked class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
+        <label for="skin-all" class="flex-1">Todas</label>
+      </li>
+      <li class="flex items-center gap-3">
+        <input id="skin-dry" type="checkbox" class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
+        <label for="skin-dry" class="flex-1">Piel seca</label>
+      </li>
+      <li class="flex items-center gap-3">
+        <input id="skin-oily" type="checkbox" class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
+        <label for="skin-oily" class="flex-1">Piel mixta / grasa</label>
+      </li>
+      <li class="flex items-center gap-3">
+        <input id="skin-sensitive" type="checkbox" class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
+        <label for="skin-sensitive" class="flex-1">Piel sensible</label>
+      </li>
+      <li class="flex items-center gap-3">
+        <input id="skin-mature" type="checkbox" class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
+        <label for="skin-mature" class="flex-1">Piel madura</label>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Categorías -->
+  <div>
+    <h3 class="text-base font-extrabold">Categorías</h3>
+    <ul class="mt-3 space-y-2 text-sm">
+      <li class="flex items-center gap-3">
+        <input id="cat-all" type="checkbox" checked class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
+        <label for="cat-all" class="flex-1">Todas</label>
+      </li>
+      <li class="flex items-center gap-3">
+        <input id="cat-exf" type="checkbox" class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
+        <label for="cat-exf" class="flex-1">Exfoliantes</label>
+      </li>
+      <li class="flex items-center gap-3">
+        <input id="cat-hid" type="checkbox" class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
+        <label for="cat-hid" class="flex-1">Hidratantes</label>
+      </li>
+      <li class="flex items-center gap-3">
+        <input id="cat-ton" type="checkbox" class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
+        <label for="cat-ton" class="flex-1">Tónicos</label>
+      </li>
+      <li class="flex items-center gap-3">
+        <input id="cat-ser" type="checkbox" class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
+        <label for="cat-ser" class="flex-1">Sérums</label>
+      </li>
+      <li class="flex items-center gap-3">
+        <input id="cat-mask" type="checkbox" class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
+        <label for="cat-mask" class="flex-1">Mascarillas</label>
+      </li>
+      <li class="flex items-center gap-3">
+        <input id="cat-sun" type="checkbox" class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
+        <label for="cat-sun" class="flex-1">Protector solar</label>
+      </li>
+      <li class="flex items-center gap-3">
+        <input id="cat-clean" type="checkbox" class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
+        <label for="cat-clean" class="flex-1">Limpieza (aceite/foam)</label>
+      </li>
+      <li class="flex items-center gap-3">
+        <input id="cat-essence" type="checkbox" class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
+        <label for="cat-essence" class="flex-1">Esencias</label>
+      </li>
+      <li class="flex items-center gap-3">
+        <input id="cat-pads" type="checkbox" class="size-4 rounded border-stone-300 text-oliva focus:ring-oliva">
+        <label for="cat-pads" class="flex-1">Pads</label>
+      </li>
+    </ul>
+  </div>
+
+</aside>
+
 
     <!-- Grid productos -->
     <section aria-label="Resultados" class="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
